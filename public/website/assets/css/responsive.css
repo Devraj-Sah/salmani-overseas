@@ -1,0 +1,188 @@
+@media only screen and (max-width: 1440px) {
+    .recu-pro-content p{
+        font-size: 12px;
+    }
+    .recu-pro-content ul li{
+        font-size: 12px;
+    }
+}
+@media only screen and (max-width: 1024px) {
+  .nav-bar a.nav-link {
+    font-size: 12px;
+    text-transform: uppercase;
+  }
+  .slick-slide img {
+    display: block;
+    max-width: 184px;
+  }
+}
+@media only screen and (max-width: 998px) {
+    .slick-slide img{
+        display: block;
+        max-width: 127px; 
+    }
+}
+@media only screen and (max-width: 768px) {
+    .carousel .carousel-caption h1{
+        font-size: 30px;
+    }
+    .section-header h2{
+        font-size: 25px;
+    }
+    .about .about-text p {
+        font-size: 12px;
+    }
+    .mission-icon img{
+        margin-left: 54px;
+    }
+    .mission-title h3{
+        margin-left: 45px;
+    }
+    .mission-dec p{
+        font-size: 15px;
+    }
+    .testimonial-title{
+        font-size: 30px;
+        font-weight: 700;
+    }
+    .testimonial .testimonial-slider p{
+        font-size: 15px ;
+    }
+    .fact .fact-text p{
+        font-size: 12px;
+    }
+    .client-title{
+        font-size: 30px;
+    }
+    .slick-slide img{
+        display: block;
+        max-width: 127px; 
+    }
+    .job-sector-title p {
+        margin-left: 38px;
+        margin-top: 50px;
+        color: #fff;
+        font-size: 20px;
+    }
+    .overlay {
+        font-size: 15px;
+    }
+    .recu-pro-content h3 {
+        font-size: 14px;
+        font-weight: 700;
+    }
+    .recu-pro-content p {
+        font-size: 12px;
+        color: #000000;
+    }
+    .recu-pro-content ul li {
+        font-size: 12px;
+        color: #000000;
+        list-style: decimal;
+    }
+}
+@media only screen and (max-width: 756px) {
+    .carousel .carousel-caption h1 {
+        font-size: 20px;
+    } 
+}
+@media only screen and (max-width: 608px) {
+    .slick-slide img{
+        display: block;
+        max-width: 85px; 
+    }  
+}
+@media only screen and (max-width: 425px) {
+    .carousel .carousel-caption h1 {
+        font-size: 15px;
+    }
+    .slick-slide img{
+        display: block;
+        max-width: 50px; 
+    }  
+    .mission-area {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        padding-top: 50px;
+        background-color: #03155D !important;
+    }
+    .normal-bg {
+        width: 100%;
+        height: 41vh;
+        position: relative;
+        background-size: cover;
+        background-position: center;
+        background-repeat: no-repeat;
+        transition: border 0.3s ease-in, box-shadow 0.3s ease-in, background 0.3s, opacity 0.3s ease-in;
+        object-fit: cover;
+    }
+    .subheader .subheader-content .page-title {
+        font-size: 27px;
+        margin-bottom: 5px;
+    }
+    .subheader .subheader-content .breadcrumb li, .subheader .subheader-content .breadcrumb li a {
+        color: #fff;
+        font-size: 13px;
+        text-transform: uppercase;
+    }
+    .bg-items {
+        /* padding: 20px; */
+        width: 100%;
+        height: auto;
+        margin: 4px;
+        background-color: white;
+        float: left;
+        cursor: pointer;
+        box-shadow: 3px 3px 5px 0px rgb(0 0 0 / 50%);
+        padding: 10px;
+    }
+    .job_desc h1{
+        font-size: 24px;
+    }
+    .job-innear-page-content {
+        margin-bottom: 20px;
+    }
+    .job_desc h1 span{
+        font-size: 9px;
+    }
+
+}
+@media only screen and (max-width: 375px) {
+    .carousel .carousel-caption p {
+        font-size: 13px;
+    }
+    .mission-icon img {
+        margin-left: 131px;
+    }
+    .mission-title h3 {
+        margin-left: 120px;
+    }
+    .job_desc h1 span{
+        font-size: 7px;
+    }
+}
+@media only screen and (max-width: 320px) {
+    .carousel .carousel-caption p {
+        font-size: 11px;
+    }
+    .mission-icon img {
+        margin-left: 99px;
+    }
+    .mission-title h3 {
+        margin-left: 92px;
+    }
+    .fact .fact-text h2{
+        font-size: 20px;
+    }
+    .fact .fact-text p {
+        font-size: 10px;
+    }
+    .slick-slide img {
+        display: block;
+        max-width: 33px;
+    }
+    .job_desc h1 span{
+        font-size: 7px;
+    }
+}

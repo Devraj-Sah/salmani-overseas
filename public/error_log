@@ -1,0 +1,7 @@
+[22-Jul-2022 12:00:06 America/Chicago] PHP Fatal error:  Uncaught ReflectionException: Class Illuminate\Routing\Router does not exist in /home1/demoradiantnepal/raki.demo.radiantnepal.com/vendor/laravel/framework/src/Illuminate/Container/Container.php:853
+Stack trace:
+#0 /home1/demoradiantnepal/raki.demo.radiantnepal.com/vendor/laravel/framework/src/Illuminate/Container/Container.php(853): ReflectionParameter->getClass()
+#1 /home1/demoradiantnepal/raki.demo.radiantnepal.com/vendor/laravel/framework/src/Illuminate/Container/Container.php(816): Illuminate\Container\Container->resolveDependencies(Array)
+#2 /home1/demoradiantnepal/raki.demo.radiantnepal.com/vendor/laravel/framework/src/Illuminate/Container/Container.php(667): Illuminate\Container\Container->build('App\\Http\\Kernel')
+#3 /home1/demoradiantnepal/raki.demo.radiantnepal.com/vendor/laravel/framework/src/Illuminate/Container/Container.php(265): Illuminate\Container\Container->resolve('App\\Http\\Kernel', Array, false)
+#4 /home1/demoradiantnepal/raki.demo.radiantnepal.com/vendor/laravel/framework/src/Illumina in /home1/demoradiantnepal/raki.demo.radiantnepal.com/vendor/laravel/framework/src/Illuminate/Container/Container.php on line 853

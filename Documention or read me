@@ -1,0 +1,24 @@
+# 1)slidder->group->slidder=slug
+# 2)about->group->about=slug
+# 3)misson->group->misson->slug
+# 4)message->group->message this is message from
+# 5)page_type = job for all job
+<=======this teaches how to insert data from admin pannel=======>
+step-1:-goto global setting and update company detail
+step-2:goto home navigation and create group with slug name about
+*goto home navigation and open about menu and select page_type normal and insert data.
+
+step-3:goto home navigation and create group with slug name message
+*goto home navigation and open message menu and select page_type normal and insert data
+step-4:goto home navigation and create group with slug name misson
+*goto home navigation and open misson menu and select page_type normal and insert data.
+step-5:goto home navigation and create group with slug name process
+*goto home navigation and open process menu and select page_type normal and insert data.
+
+<!-----------------------for main navigation------------->
+step-6(for job category):goto Main navigation and create page_type group with caption "any name for job category" and remember insert banner image for only job category.
+*goto Main navigation and open above menu and select page_type Job and insert data.
+note:-always select page_type job for job category and image must be in field banner image.
+step-7(for gallery):-goto Main navigation and create page_type group with caption "any as your choice"
+*goto Main navigation and open above gallery menu and select page_type Photo Gallery and insert data and there must be image as banner image field.
+step-8(common page):-goto main navigation and create page_type Normal must be banner image.

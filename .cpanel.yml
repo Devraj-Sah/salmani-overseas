@@ -1,0 +1,5 @@
+---
+deployment:
+  tasks:
+    - export DEPLOYPATH=/home1/demoradiantnepal/srs.demo.radiantnepal.com/
+    - /bin/cp -r * $DEPLOYPATH

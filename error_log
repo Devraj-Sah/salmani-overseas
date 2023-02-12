@@ -1,0 +1,27 @@
+[03-Oct-2020 06:50:55 America/New_York] PHP Warning:  POST Content-Length of 67777920 bytes exceeds the limit of 8388608 bytes in Unknown on line 0
+[03-Oct-2020 07:13:15 America/New_York] PHP Warning:  POST Content-Length of 12499316 bytes exceeds the limit of 8388608 bytes in Unknown on line 0
+[03-Oct-2020 07:20:56 America/New_York] PHP Warning:  POST Content-Length of 12499316 bytes exceeds the limit of 8388608 bytes in Unknown on line 0
+[03-Oct-2020 07:58:41 America/New_York] PHP Warning:  POST Content-Length of 12495486 bytes exceeds the limit of 8388608 bytes in Unknown on line 0
+[03-Oct-2020 08:05:35 America/New_York] PHP Warning:  POST Content-Length of 12495486 bytes exceeds the limit of 8388608 bytes in Unknown on line 0
+[03-Oct-2020 11:00:13 America/New_York] PHP Warning:  POST Content-Length of 12495486 bytes exceeds the limit of 8388608 bytes in Unknown on line 0
+[03-Oct-2020 11:20:32 America/New_York] PHP Warning:  POST Content-Length of 11378410 bytes exceeds the limit of 8388608 bytes in Unknown on line 0
+[03-Oct-2020 11:57:52 America/New_York] PHP Warning:  POST Content-Length of 11378410 bytes exceeds the limit of 8388608 bytes in Unknown on line 0
+[03-Oct-2020 11:58:39 America/New_York] PHP Warning:  POST Content-Length of 11378410 bytes exceeds the limit of 8388608 bytes in Unknown on line 0
+[03-Oct-2020 12:01:56 America/New_York] PHP Warning:  POST Content-Length of 11378410 bytes exceeds the limit of 8388608 bytes in Unknown on line 0
+[03-Oct-2020 20:49:38 America/New_York] PHP Warning:  POST Content-Length of 11378403 bytes exceeds the limit of 8388608 bytes in Unknown on line 0
+[31-Dec-2020 09:50:53 Asia/Kathmandu] PHP Fatal error:  Interface 'JsonSerializable' not found in /home/khabarinepal/public_html/vendor/laravel/framework/src/Illuminate/Support/Collection.php on line 40
+[31-Dec-2020 09:50:56 Asia/Kathmandu] PHP Fatal error:  Uncaught ReflectionException: Class view does not exist in /home/khabarinepal/public_html/vendor/laravel/framework/src/Illuminate/Container/Container.php:788
+Stack trace:
+#0 /home/khabarinepal/public_html/vendor/laravel/framework/src/Illuminate/Container/Container.php(788): ReflectionClass->__construct('view')
+#1 /home/khabarinepal/public_html/vendor/laravel/framework/src/Illuminate/Container/Container.php(667): Illuminate\Container\Container->build('view')
+#2 /home/khabarinepal/public_html/vendor/laravel/framework/src/Illuminate/Container/Container.php(615): Illuminate\Container\Container->resolve('view', Array)
+#3 /home/khabarinepal/public_html/vendor/laravel/framework/src/Illuminate/Foundation/Application.php(767): Illuminate\Container\Container->make('view', Array)
+#4 /home/khabarinepal/public_html/vendor/laravel/framework/src/Illuminate/Container/Container.php(1227): Illuminate\Foundation\Application->make('view')
+#5 /home/khabarinepal/public_html/vendor/laravel/framework/src/Illuminate/Support/Facades/F in /home/khabarinepal/public_html/vendor/laravel/framework/src/Illuminate/Container/Container.php on line 788
+[23-Feb-2021 08:32:54 America/New_York] PHP Warning:  POST Content-Length of 35232754 bytes exceeds the limit of 8388608 bytes in Unknown on line 0
+[23-Feb-2021 08:52:07 America/New_York] PHP Warning:  POST Content-Length of 35232681 bytes exceeds the limit of 8388608 bytes in Unknown on line 0
+[23-Feb-2021 08:53:59 America/New_York] PHP Warning:  POST Content-Length of 35232681 bytes exceeds the limit of 8388608 bytes in Unknown on line 0
+[06-Apr-2021 07:07:58 America/New_York] PHP Fatal error:  Maximum execution time of 30 seconds exceeded in /home/khabarinepal/public_html/vendor/symfony/http-foundation/FileBag.php on line 22
+[06-Apr-2021 07:07:58 America/New_York] PHP Fatal error:  Maximum execution time of 30 seconds exceeded in /home/khabarinepal/public_html/vendor/composer/ClassLoader.php on line 321
+[06-Apr-2021 07:17:22 America/New_York] PHP Fatal error:  Maximum execution time of 30 seconds exceeded in /home/khabarinepal/public_html/vendor/composer/ClassLoader.php on line 321
+[06-Apr-2021 07:17:28 America/New_York] PHP Fatal error:  Maximum execution time of 30 seconds exceeded in /home/khabarinepal/public_html/vendor/laravel/framework/src/Illuminate/Filesystem/Filesystem.php on line 11
