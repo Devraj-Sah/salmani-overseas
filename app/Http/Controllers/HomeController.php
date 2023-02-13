@@ -99,17 +99,17 @@ class HomeController extends Controller
         //     $jobs = null;
         // }
         //return $misson;
-        $job_categories = Navigation::all()->where('page_type','Group Jobs');
         // if($category->count()>0){
         //     $category_id = $category->first()->id;
         //     $job_categories = Navigation::all()->where('parent_page_id',$category_id);
         // }
         
         // return $job_categories;
+       
     
         $global_setting = GlobalSetting::all()->first(); 
         //return $missons;       
-        return view("website.index")->with(['job_categories'=>$job_categories,'testimonial'=>$testimonial,'statistics'=>$statistics,'banners'=>$banners,'partners'=>$partners,'about'=>$About,'menus'=>$menus,'global_setting'=>$global_setting,'sliders'=>$sliders,'missons'=>$missons,'message'=>$message,'jobs'=>$jobs]);
+        return view("website.index")->with(['testimonial'=>$testimonial,'statistics'=>$statistics,'banners'=>$banners,'partners'=>$partners,'about'=>$About,'menus'=>$menus,'global_setting'=>$global_setting,'sliders'=>$sliders,'missons'=>$missons,'message'=>$message,'jobs'=>$jobs]);
     }
 
 
@@ -212,15 +212,22 @@ class HomeController extends Controller
             // return $notice_heading;
             return view("website.notice")->with(['notices'=>$notices,'jobs'=>$jobs,'menus'=>$menus,'sliders'=>$sliders,'about'=>$About,'global_setting'=>$global_setting,'slug_detail'=>$slug_detail]);
         }
+        elseif($slug1->page_type == "Group Services"){
+            // return $category_id;
+            $normal = Navigation::find($category_id);
+            $services = Navigation::query()->where('parent_page_id',$category_id)->where('page_status',1)->orderBy('created_at', 'desc')->get();
+            return view("website.services")->with(['services'=>$services,'normal'=>$normal,'jobs'=>$jobs,'menus'=>$menus,'sliders'=>$sliders,'about'=>$About,'global_setting'=>$global_setting,'slug1'=>$slug1]);
+        }
+        elseif($category_type == "Process Detail"){
+            // return $category_id;
+            $normal = Navigation::find($category_id);
+            $services = Navigation::query()->where('parent_page_id',$category_id)->where('page_status',1)->orderBy('created_at', 'desc')->get();
+            return view("website.processDetail")->with(['services'=>$services,'normal'=>$normal,'jobs'=>$jobs,'menus'=>$menus,'sliders'=>$sliders,'about'=>$About,'global_setting'=>$global_setting,'slug1'=>$slug1]);
+        }
         elseif($category_type == "Normal"){
-            //return $category_id;
+            // return $category_id;
             $normal = Navigation::find($category_id);
             return view("website.normal")->with(['normal'=>$normal,'jobs'=>$jobs,'menus'=>$menus,'sliders'=>$sliders,'about'=>$About,'global_setting'=>$global_setting,'slug1'=>$slug1]);
-        }
-        elseif($category_type == "Group Services"){
-            //return $category_id;
-            $normal = Navigation::find($category_id);
-            return view("website.services")->with(['normal'=>$normal,'jobs'=>$jobs,'menus'=>$menus,'sliders'=>$sliders,'about'=>$About,'global_setting'=>$global_setting,'slug1'=>$slug1]);
         }
         elseif($category_type == "Group Jobs"){
         
@@ -341,7 +348,7 @@ class HomeController extends Controller
                         
                         return view("website.job-list")->with(['jobs'=>Job::all(),'slug1'=>$slug1,'slug2'=>$slug2]);
                     }
-                    return "Sad";
+                    // return "Sad";
                     return redirect('/');//submenu is page_type=Group and its internal items are empty
                 }
             }
@@ -396,7 +403,7 @@ class HomeController extends Controller
             // return $normal;
             return view("website.chart")->with(['chart'=>$chart,'jobs'=>$jobs,'menus'=>$menus,'sliders'=>$sliders,'about'=>$About,'global_setting'=>$global_setting,'slug1'=>$slug1,'slug2'=>$slug2]);
         }
-    
+        
         elseif($subcategory_type == "Group"){
             //return "return to job else";
             return view("website.job-list")->with(['jobs'=>$jobs,'menus'=>$menus,'sliders'=>$sliders,'about'=>$About,'global_setting'=>$global_setting,'slug_detail'=>$slug_detail,'slug1'=>$slug1,'slug2'=>$slug2]);

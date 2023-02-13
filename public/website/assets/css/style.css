@@ -95,7 +95,7 @@ a:focus {
 .top-bar .top-bar-item {
   display: flex;
   align-items: center;
-  justify-content: flex-end;
+  /* justify-content: flex-end; */
 }
 
 .top-bar .top-bar-icon {
@@ -2964,7 +2964,7 @@ h1 {
 }
 
 .form-area button {
-  background-color: #c74044;
+  background-color: #03155d;
   border: none;
   margin-top: 10px;
 }

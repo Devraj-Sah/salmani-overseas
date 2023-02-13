@@ -2,19 +2,21 @@
 
 @section('content')
     <!-- Breadcrumb area Start -->
-    <section class="page-title-area bg-image ptb--80" data-bg-image="/website/images/page-bg.jpg">
+    <div class="normal-bg subheader" style="background-image: url('/website/img/service-banner.jpg');">
         <div class="container">
             <div class="row">
-                <div class="col-12 text-center">
-                    <h1 class="page-title">About Us</h1>
-                    <ul class="breadcrumb">
-                        <li><a href="/">Home</a></li>
-                        <li class="current"><span>Chart</span></li>
-                    </ul>
+                <div class="col-12">
+                    <div class="subheader-content">
+                        <h1 class="page-title text-white fw-600">Shalmani Overseas.</h1>
+                        <ul class="custom-flex breadcrumb">
+                            <li><a href="/">Home</a></li>
+                            <li>{{$chart->caption}}</li>
+                        </ul>
+                    </div>
                 </div>
             </div>
         </div>
-    </section>
+    </div>
     <!-- Breadcrumb area End -->
 
     <!-- Main Content Wrapper Start -->

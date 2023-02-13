@@ -107,20 +107,19 @@
                     </div>
                     <div class="col-lg-4 col-md-4 col-sm-12 ">
                         <div class="siderbar-link-list">
+                            @php
+                                $service_rightbars = App\Models\Navigation::query()->where('page_type','Process Detail')->where('page_status',1)->orderBy('created_at', 'desc')->get();
+                                
+                            @endphp
                             <h5>OUR SERVICES</h5>
                             <hr>
                             <ul>
-                                <li>
-                                    <a href="">Overseas Recruitment</a>
-                                </li>
-                                <li>
-                                    <a href="">Overseas Recruitment</a>
-                                </li>
-                                <li>
-                                    <a href="">Overseas Recruitment</a>
-                                </li>
-                                <li>
-                                    <a href="">Deployment</a>
+                                @foreach ($service_rightbars as $service_rightbar)
+                                    <li>
+                                        <a href="/{{$service_rightbar->nav_name}}">{{$service_rightbar->caption}}</a>
+                                    </li>                                    
+                                @endforeach
+                               
                                 </li>
                             </ul>
                         </div>

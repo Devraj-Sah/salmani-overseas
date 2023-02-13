@@ -14,8 +14,11 @@ use Session;
 use App\Models\Navigation;
 use App\Job;
 use App\Contact;
+use App\Mail\ContactMailer;
 
-use Mail;
+// use Mail;
+use Illuminate\Support\Facades\Mail;
+
 
 class ContactController extends Controller
 {
@@ -65,6 +68,7 @@ class ContactController extends Controller
         return view("admin.apply")->with(['menus'=>$menus,'global_setting'=>$global_setting,'job_slug'=>$slug]);
     }
     public function ContactStore(Request $req){
+        // return "hlo";
         $validated = $req->validate([
             'first_name' => 'required',
             // 'number' => 'required', 
@@ -82,17 +86,21 @@ class ContactController extends Controller
 
         $contact = new Contact;
         $contact->first_name = $req['first_name'];
-        $contact->last_name = $req['last_name'];
+        // $contact->last_name = $req['last_name'];
         $contact->number = $req['number'];
         $contact->email = $req['email'];
         $contact->file = $name;
         $contact->message = $req['message'];
-        $contact->job_id = $req['job_id'];
+        // $contact->job_id = $req['job_id'];
         $contact->save();
 
         if($contact){
-            // Session::flash('contact', 'Thanks for submitting'); 
-            // return redirect('/');
+            $name = $req['first_name'];
+            $email = $req['email'];
+            $number = $req['number'];
+            $message = $req['message'];
+            $data = compact('name','email','number','message'); 
+            Mail::to('production@radiantnepal.com')->send(new ContactMailer($data));
             return redirect()->back()->with('contact', 'Messages sent successfully !!');   
         }
         else{

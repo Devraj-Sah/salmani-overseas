@@ -51,27 +51,29 @@
 
         <section class="wrapper">
             <div class="container">
-                <div class="row">
-                    <div class="col-sm-12 col-md-6 col-lg-4 mb-4">
-                        <a href="RecrutmentProcess.html">
-                            <div class="card text-white card-has-bg click-col"
-                                style="background-image:url('https://source.unsplash.com/600x900/?tech,street');">
-                                <img class="card-img d-none" src="https://source.unsplash.com/600x900/?tech,street"
-                                    alt="Goverment Lorem Ipsum Sit Amet Consectetur dipisi?">
-                                <div class="card-img-overlay d-flex flex-column">
-                                    <div class="card-body">
-                                        <small class="card-meta mb-2">Overseas Recruitment</small>
-                                        <h4 class="card-title mt-0 "><a class="text-white" herf="#">Before going abroad for
-                                                working purpose, it is compulsion to be acknowledged about the country. For
-                                                this purpose...</a></h4>
-                                        <small><i class="fa-solid fa-hand-point-right"></i> <a href="RecrutmentProcess.html">Read More</a></small>
+                @if (isset($services))                    
+                    <div class="row">
+                        @foreach ($services as $service)                        
+                            <div class="col-sm-12 col-md-6 col-lg-4 mb-4">
+                                <a href="{{ $service->nav_name }}">
+                                    <div class="card text-white card-has-bg click-col"
+                                        style="background-image:url('{{$service->banner_image}}');">
+                                        <img class="card-img d-none" src="{{$service->banner_image}}"
+                                            alt="Goverment Lorem Ipsum Sit Amet Consectetur dipisi?">
+                                        <div class="card-img-overlay d-flex flex-column">
+                                            <div class="card-body">
+                                                <small class="card-meta mb-2">{{$service->caption}}</small>
+                                                <h4 class="card-title mt-0 "><a class="text-white" herf="{{ $service->nav_name }}">{{ str_limit($service->page_description, 105, '...') }}</a></h4>
+                                                <small><i class="fa-solid fa-hand-point-right"></i> <a href="{{ $service->nav_name }}">Read More</a></small>
+                                            </div>
+            
+                                        </div>
                                     </div>
-    
-                                </div>
+                                </a>
                             </div>
-                        </a>
+                        @endforeach
                     </div>
-                </div>
+                @endif
     
             </div>
         </section>

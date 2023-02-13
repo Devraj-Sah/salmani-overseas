@@ -122,8 +122,8 @@
                     <div class="row align-items-center">
                         <div class="col-lg-4 col-md-12">
                             <div class="logo">
-                                <a href="index.html">
-                                    <img src="/website/img/logo/logo.png" alt="">
+                                <a href="/">
+                                    <img src="{{asset('uploads/icons/'.$global_setting->site_logo)}}" alt="">
                                     <!-- <img src="img/logo.jpg" alt="Logo"> -->
                                 </a>
                             </div>
@@ -131,13 +131,13 @@
                         <div class="col-lg-8 col-md-7 d-none d-lg-block">
                             <div class="row">
                                 <div class="col-4">
-                                    <div class="top-bar-item">
+                                    <div class="top-bar-item" style="justify-content: flex-end;">
                                         <div class="top-bar-icon">
                                             <i class="flaticon-calendar"></i>
                                         </div>
                                         <div class="top-bar-text">
                                             <h3>Govt. License No: </h3>
-                                            <p>828/066/067</p>
+                                            <p>{{$global_setting->extra_one}}</p>
                                         </div>
                                     </div>
                                 </div>
@@ -148,7 +148,7 @@
                                         </div>
                                         <div class="top-bar-text">
                                             <h3>Call Us</h3>
-                                            <p>01-5147227, 5147228</p>
+                                            <p>{{$global_setting->phone}}, {{$global_setting->phone_ne}}</p>
                                         </div>
                                     </div>
                                 </div>
@@ -159,7 +159,7 @@
                                         </div>
                                         <div class="top-bar-text">
                                             <h3>Email Us</h3>
-                                            <p>info@shalmanioverseas.com</p>
+                                            <p><a href="mailto:{{$global_setting->site_email}}">{{$global_setting->site_email}}</a></p>
                                         </div>
                                     </div>
                                 </div>
@@ -187,8 +187,12 @@
                                             {{ $menu->caption }}
                                         </a>
                                     @endif
-                                    @if ($menu->childs->count() > 0)
-                                        <div class="nav-item dropdown">
+                                    @if ($menu->page_type == "Group Services")
+                                        <a href="/{{ $menu->nav_name }}" class="nav-item nav-link @if($loop->iteration == 1) active @endif ">
+                                            {{ $menu->nav_name }}
+                                        </a>
+                                    @elseif ($menu->childs->count() > 0)
+                                    <div class="nav-item dropdown">
                                             <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">{{ $menu->caption }}</a>
                                             <div class="dropdown-menu">
                                                 @foreach ($menu->childs as $submenu)
@@ -253,44 +257,45 @@
                     <div class="col-md-6 col-lg-3">
                         <div class="footer-contact">
                             <h2>Office Contact</h2>
-                            <p><i class="fa fa-map-marker-alt"></i>G.P.O. Box: 8975, EPC-595, Koteshwor, Kathmandu, Nepal
+                            <p><i class="fa fa-map-marker-alt"></i>{{$global_setting->page_keyword}}, {{$global_setting->website_full_address}}
                             </p>
-                            <p><i class="fa fa-phone-alt"></i>01-5147227, 5147228</p>
-                            <p><i class="fa fa-envelope"></i>info@shalmanioverseas.com</p>
+                            <p><i class="fa fa-phone-alt"></i>{{$global_setting->phone}}, {{$global_setting->phone_ne}}</p>
+                            <p style="font-size:15px;"><i class="fa fa-envelope"></i>{{$global_setting->site_email}}</p>
                             <div class="footer-social">
-                                <a href=""><i class="fab fa-twitter"></i></a>
-                                <a href=""><i class="fab fa-facebook-f"></i></a>
-                                <a href=""><i class="fab fa-youtube"></i></a>
-                                <a href=""><i class="fab fa-instagram"></i></a>
-                                <a href=""><i class="fab fa-linkedin-in"></i></a>
+                                <a href="{{$global_setting->twitter}}"><i class="fab fa-twitter"></i></a>
+                                <a href="{{$global_setting->facebook}}"><i class="fab fa-facebook-f"></i></a>
+                                <a href="{{$global_setting->other}}"><i class="fab fa-youtube"></i></a>
+                                <a href="{{$global_setting->linkedin}}"><i class="fab fa-instagram"></i></a>
+                                {{-- <a href="{{$global_setting->linkedin}}"><i class="fab fa-linkedin-in"></i></a> --}}
                             </div>
                         </div>
                     </div>
                     <div class="col-md-6 col-lg-3">
                         <div class="footer-link">
                             <h2>JOB SECTORS</h2>
-                            <a href="">Security Guard</a>
-                            <a href="">Hotel Group</a>
-                            <a href="">Mechanics</a>
-                            <a href="">Engineering Group</a>
-                            <a href="">Civil Construction</a>
+                            @php
+                                 $fo_job_categories = App\Models\Navigation::query()->where('page_type','Group Jobs')->where('page_status',1)->orderBy('updated_at', 'desc')->limit(5)->get();
+                            @endphp
+                            @foreach ($fo_job_categories as $job_categorie )                                
+                                <a href="">{{$job_categorie->caption}}</a>
+                            @endforeach
+                            
                         </div>
                     </div>
                     <div class="col-md-6 col-lg-3">
                         <div class="footer-link">
                             <h2>Useful Pages</h2>
-                            <a href="">About Us</a>
-                            <a href="">Job Sectors</a>
-                            <a href="">Contact</a>
-                            <a href="">Testimonial</a>
+                            <a href="/aboutus/about-one">About Us</a>
+                            <a href="/job-sectors">Job Sectors</a>
+                            <a href="/contact">Contact</a>
+                            <a href="/service">Testimonial</a>
                         </div>
                     </div>
                     <div class="col-md-6 col-lg-3">
                         <div class="newsletter">
                             <h2>Newsletter</h2>
                             <p>
-                                Lorem ipsum dolor sit amet elit. Phasellus nec pretium mi. Curabitur facilisis ornare
-                                velit non vulpu
+                                {{$global_setting->page_description}}
                             </p>
                         </div>
                     </div>

@@ -81,7 +81,7 @@
                                     <tr>
                                         <td>{{$index+1}}</td>
                                         <td>{{$contact->id ?? ''}}</td>
-                                        <td>{{$contact->name ?? ''}}</td>                                     
+                                        <td>{{$contact->first_name ?? ''}}</td>                                     
                                         <td>{{$contact->number ?? ''}}</td>
                                         <td>{{$contact->email ?? ''}}</td>
                                         <td>{{$contact->message ?? ''}}</td>

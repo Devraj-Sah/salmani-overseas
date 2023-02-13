@@ -30,10 +30,15 @@
                     <input type="text" id="site_nepali_name" name="site_nepali_name" class="form-control"
                            placeholder="Site Name" value="{{$global_setting->site_nepali_name}}">
                 </div>
-                <div class="form-group col-md-12">
+                <div class="form-group col-md-6">
                     <label for="site_email">Site Email</label>
                     <input type="email" id="site_email" name="site_email" class="form-control" placeholder="Site Email"
                            value="{{$global_setting->site_email}}">
+                </div>
+                <div class="form-group col-md-6">
+                    <label for="site_email">Government Licience Number</label>
+                    <input type="text" id="site_email" name="extra_one" class="form-control" placeholder="Government Licience Number"
+                           value="{{$global_setting->extra_one}}">
                 </div>
                 <div class="form-group col-md-6">
                     <label for="phone">Site Contact</label>
@@ -68,15 +73,15 @@
                 </div>
 
                 <div class="form-group col-md-6">
-                    <label for="LinkedIn">LinkedIn url</label>
+                    <label for="LinkedIn">Instagram url</label>
                     <input type="text" id="LinkedIn" name="linkedin" class="form-control"
-                           placeholder="LinkedIn" value="{{$global_setting->linkedin}}">
+                           placeholder="Instagram" value="{{$global_setting->linkedin}}">
                 </div>
 
                 <div class="form-group col-md-6">
-                    <label for="other">Other Link</label>
-                    <input type="text" id="other" name="page_keyword" class="form-control"
-                           placeholder="Other Link" value="{{$global_setting->other}}">
+                    <label for="other">Youtube Link</label>
+                    <input type="text" id="other" name="other" class="form-control"
+                           placeholder="youtube Link" value="{{$global_setting->other}}">
                 </div>
                 <div class="form-group col-md-6">
                     <label for="page_title">Page Title</label>
@@ -103,7 +108,7 @@
                 </div>
 
                 <div class="form-group col-md-6">
-                    <img src="{{asset('public/uploads/icons/'.$global_setting->favicon)}}" width="150px"
+                    <img src="{{asset('uploads/icons/'.$global_setting->favicon)}}" width="150px"
                          class="img-responsive img-thumbnail">
                 </div>
                 <div class="clearfix"></div>
@@ -114,7 +119,7 @@
                 </div>
 
                 <div class="form-group col-md-6">
-                    <img src="{{asset('public/uploads/icons/'.$global_setting->site_logo)}}" width="150px"
+                    <img src="{{asset('uploads/icons/'.$global_setting->site_logo)}}" width="150px"
                          class="img-responsive img-thumbnail">
                 </div>
                 <div class="clearfix"></div>
@@ -125,7 +130,7 @@
                 </div>
 
                 <div class="form-group col-md-6">
-                    <img src="{{asset('public/uploads/icons/'.$global_setting->site_logo_nepali)}}" width="150px"
+                    <img src="{{asset('uploads/icons/'.$global_setting->site_logo_nepali)}}" width="150px"
                          class="img-responsive img-thumbnail">
                 </div>
 
